@@ -7,6 +7,7 @@ class Conexion{
         $user = "root";
         $password = "";
         //$database = "bdestelista"; 
+        
         $database = "minimarketestelista"; 
 
 		$link = new PDO("mysql:host=$server;dbname=$database", $user, $password);
