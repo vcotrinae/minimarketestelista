@@ -39,10 +39,11 @@ class ModeloUsuarios{
 
 	static public function mdlCrearUsuario($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(usu_nombre, usu_usuario, usu_password, usu_perfil, usu_foto) VALUES (:usu_nombre, :usu_usuario, :usu_password, :usu_perfil, :usu_foto)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(usu_nombre, usu_usuario, usu_email, usu_password, usu_perfil, usu_foto) VALUES (:usu_nombre, :usu_usuario, :usu_email, :usu_password, :usu_perfil, :usu_foto)");
 
 		$stmt->bindParam(":usu_nombre", $datos["usu_nombre"], PDO::PARAM_STR);
 		$stmt->bindParam(":usu_usuario", $datos["usu_usuario"], PDO::PARAM_STR);
+		$stmt->bindParam(":usu_email", $datos["usu_email"], PDO::PARAM_STR);
 		$stmt->bindParam(":usu_password", $datos["usu_password"], PDO::PARAM_STR);
 		$stmt->bindParam(":usu_perfil", $datos["usu_perfil"], PDO::PARAM_STR);
 		$stmt->bindParam(":usu_foto", $datos["usu_foto"], PDO::PARAM_STR);
@@ -63,15 +64,16 @@ class ModeloUsuarios{
 
 	}
 
-		/*=============================================
+	/*=============================================
 	EDITAR USUARIO
 	=============================================*/
 
 	static public function mdlEditarUsuario($tabla, $datos){
 	
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET usu_nombre = :usu_nombre, usu_password = :usu_password, usu_perfil = :usu_perfil, usu_foto = :usu_foto WHERE usu_usuario = :usu_usuario");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET usu_nombre = :usu_nombre, usu_email = :usu_email, usu_password = :usu_password, usu_perfil = :usu_perfil, usu_foto = :usu_foto WHERE usu_usuario = :usu_usuario");
 
 		$stmt -> bindParam(":usu_nombre", $datos["usu_nombre"], PDO::PARAM_STR);
+		$stmt -> bindParam(":usu_email", $datos["usu_email"], PDO::PARAM_STR);
 		$stmt -> bindParam(":usu_password", $datos["usu_password"], PDO::PARAM_STR);
 		$stmt -> bindParam(":usu_perfil", $datos["usu_perfil"], PDO::PARAM_STR);
 		$stmt -> bindParam(":usu_foto", $datos["usu_foto"], PDO::PARAM_STR);

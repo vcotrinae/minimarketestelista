@@ -68,6 +68,7 @@ $(".tablas").on("click", ".btnEditarUsuario", function(){
         success: function(repuesta) {
             console.log('repuesta del servidor:', repuesta);
             $("#editarNombre").val(repuesta["usu_nombre"]);
+            $("#editarEmail").val(repuesta["usu_email"]);
             $("#editarUsuario").val(repuesta["usu_usuario"]);
             $("#editarPerfil").val(repuesta["usu_perfil"]);
             $("#claveActual").val(repuesta["usu_password"]);

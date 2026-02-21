@@ -156,6 +156,7 @@ class ControladorUsuarios {
 
 				$datos = array("usu_nombre" => $_POST["nuevoNombre"],
 					           "usu_usuario" => $_POST["nuevoUsuario"],
+					           "usu_email" => $_POST["nuevoEmail"],
 					           "usu_password" => $encriptar,
 					           "usu_perfil" => $_POST["nuevoPerfil"],
 					           "usu_foto"=>$ruta);
@@ -331,6 +332,7 @@ class ControladorUsuarios {
 				}
 
 				$datos = array("usu_nombre" => $_POST["editarNombre"],
+							   "usu_email" => $_POST["editarEmail"],
 							   "usu_usuario" => $_POST["editarUsuario"],
 							   "usu_password" => $encriptar,
 							   "usu_perfil" => $_POST["editarPerfil"],

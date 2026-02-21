@@ -43,6 +43,7 @@ if($_SESSION["usu_perfil"] == "Vendedor" || $_SESSION["usu_perfil"] == "Especial
                                     <tr>
                                         <th style="width:10px">#</th>
                                         <th>Nombre</th>
+                                        <th>Correo</th>
                                         <th>Usuario</th>
                                         <th>Perfil</th>
                                         <th>Foto</th>                                        
@@ -63,6 +64,7 @@ if($_SESSION["usu_perfil"] == "Vendedor" || $_SESSION["usu_perfil"] == "Especial
                                                  <tr>
                                                     <td>'.($key+1).'</td>
                                                     <td>'.$value["usu_nombre"].'</td>
+                                                    <td>'.$value["usu_email"].'</td>
                                                     <td>'.$value["usu_usuario"].'</td>
                                                     <td>'.$value["usu_perfil"].'</td>';
                                                     
@@ -74,10 +76,8 @@ if($_SESSION["usu_perfil"] == "Vendedor" || $_SESSION["usu_perfil"] == "Especial
                                                 
 
                                                     if($value["usu_estado"] != 0){
-
                                                         echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["usu_id"].'" estadoUsuario="0">Activado</button></td>';
-                                    
-                                                      }else{
+                                                    }else{
                                     
                                                         echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["usu_id"].'" estadoUsuario="1">Desactivado</button></td>';
                                     
@@ -104,6 +104,7 @@ if($_SESSION["usu_perfil"] == "Vendedor" || $_SESSION["usu_perfil"] == "Especial
                                     <tr>
                                         <th style="width:10px">#</th>
                                         <th>Nombre</th>
+                                        <th>Correo</th>
                                         <th>Usuario</th>
                                         <th>Perfil</th>
                                         <th>Foto</th>                                        
@@ -149,6 +150,16 @@ MODAL AGREGAR UsuarioS
                             </span>
                         </div>
                         <input type="text" class="form-control" name="nuevoNombre" placeholder="Ingrese Nombres"
+                            required>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <input type="email" class="form-control" id="nuevoEmail" name="nuevoEmail" placeholder="Ingrese Email"
                             required>
                     </div>
 
@@ -244,6 +255,15 @@ MODAL EDITAR USUARIO
                             </span>
                         </div>
                         <input type="text" class="form-control" id="editarNombre" name="editarNombre" value="">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> 
+                                <i class="fa fa-id-card" aria-hidden="true"></i> 
+                            </span>
+                        </div>
+                        <input type="email" class="form-control" id="editarEmail" name="editarEmail" value="">
                     </div>
 
                     <div class="input-group mb-3">
